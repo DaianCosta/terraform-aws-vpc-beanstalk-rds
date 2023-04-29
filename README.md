@@ -45,6 +45,50 @@ role_beanstalk               = "yout role from ec2" #aws-elasticbeanstalk-ec2-ro
 
 ```
 
+Configurações dos ambientes, encontram nos arquivos específicos de cada ambiente
+
+Configurações do RDS
+_rds-dev.tf_
+```hcl
+locals {
+  rds_name_dev = "development"
+}
+
+module "rds_dev" {
+  source = "./modules/rds"
+
+  db_name        = format("%s%s", var.db_name_basic, local.rds_name_dev)
+  engine         = "aurora-mysql"
+  engine_version = "5.7.mysql_aurora.2.11.1"
+  instance_class = "db.t3.small"
+  db_username    = format("master_%s", local.rds_name_dev)
+  db_password    = module.rds_dev.password_generated
+  sg_to_access   = [module.env_dev.env_sg_id]
+  vpc_id         = var.vpc_id
+  subnets        = var.private_subnets
+}
+```
+_rds-dev.tf_
+```hcl
+locals {
+  rds_name_prod = "production"
+}
+
+module "rds_prod" {
+  source = "./modules/rds"
+
+  db_name        = format("%s%s", var.db_name_basic, local.rds_name_prod)
+  engine         = "aurora-mysql"
+  engine_version = "5.7.mysql_aurora.2.11.1"
+  instance_class = "db.t3.medium"
+  db_username    = format("master_%s", local.rds_name_prod)
+  db_password    = module.rds_prod.password_generated
+  sg_to_access   = [module.env_prod.env_sg_id]
+  vpc_id         = var.vpc_id
+  subnets        = var.private_subnets
+}
+```
+
 #comandos
 
 ```hcl
