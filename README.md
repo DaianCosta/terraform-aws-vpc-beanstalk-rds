@@ -9,7 +9,7 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 - Elastic IP
 
 Acessar o diretório /infra-basica<br />
-cd /infra-basic
+_cd /infra-basic_
 
 _terraform.tfvars_
 ```hcl
@@ -34,7 +34,7 @@ Também será criado duas bases de dados de dev/html e prod no rds aurora modo c
 A senha do banco de dados será gerada automatica e disponibilizada nas variáveis de ambiente do beanstalk.
 
 Acessar o diretório /infra-basica<br />
-cd /app
+_cd /app_
 
 _terraform.tfvars_
 ```hcl
