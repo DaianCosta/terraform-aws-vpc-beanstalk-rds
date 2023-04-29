@@ -1,4 +1,4 @@
-## Features
+## infra-basic
 Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você poderá utilizar os manifestos abaixo:
 
 - VPN
