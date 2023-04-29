@@ -8,7 +8,7 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 - Internet Gateway
 - Elastic IP
 
-Acessar o diretório /infra-basica
+###Acessar o diretório /infra-basica
 cd /infra-basic
 
 _terraform.tfvars_
