@@ -11,6 +11,7 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 Acessar o diretório /infra-basica<br />
 _cd /infra-basic_
 
+Configurar com seu ambiente desejado
 _terraform.tfvars_
 ```hcl
 region            = "us-east-1"
@@ -36,6 +37,7 @@ A senha do banco de dados será gerada automatica e disponibilizada nas variáve
 Acessar o diretório /infra-basica<br />
 _cd /app_
 
+Configurar com seu ambiente desejado, o que é global para todos os ambientes
 _terraform.tfvars_
 ```hcl
 #beanstalk-app
