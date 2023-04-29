@@ -8,7 +8,7 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 - Internet Gateway
 - Elastic IP
 
-###Acessar o diretório /infra-basica
+Acessar o diretório /infra-basica<br />
 cd /infra-basic
 
 _terraform.tfvars_
@@ -33,7 +33,7 @@ Esse módulo irá criar uma estrutura de dev/hml e prod no beanstalk, utilizando
 Também será criado duas bases de dados de dev/html e prod no rds aurora modo cluster.
 A senha do banco de dados será gerada automatica e disponibilizada nas variáveis de ambiente do beanstalk.
 
-Acessar o diretório /infra-basica
+Acessar o diretório /infra-basica<br />
 cd /app
 
 _terraform.tfvars_
