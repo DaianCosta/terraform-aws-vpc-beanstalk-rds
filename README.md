@@ -18,10 +18,10 @@ terraform apply
 
 ## app
 
-| Name | Source | Version |
-|------|--------|---------|
-| <a name="module_admin_secret"></a> [admin\_secret](#module\_admin\_secret) | git@github.com:youse-seguradora/terraform-aws-secretsmanager.git | v1.0.0 |
-| <a name="module_sg_rds"></a> [sg\_rds](#module\_sg\_rds) | git@github.com:youse-seguradora/terraform-aws-security-group.git | v1.0.0 |
+| Variable | Value |
+|------|--------|
+| xxx | v1.0.0 |
+| xxx | v1.0.0 |
 
 ```hcl
 #beanstalk-app
