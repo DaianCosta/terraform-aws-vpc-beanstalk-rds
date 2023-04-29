@@ -11,6 +11,12 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 Acessar o diretório /infra-basica<br />
 _cd /infra-basic_
 
+comandos
+```hcl
+terraform init
+terraform fmt
+```
+
 Configurar com seu ambiente desejado
 _terraform.tfvars_
 ```hcl
@@ -24,8 +30,6 @@ subnet_public_b  = "10.0.4.0/24"
 ```
 comandos
 ```hcl
-terraform init
-terraform fmt
 terraform plan
 terraform apply
 ```
@@ -36,6 +40,12 @@ A senha do banco de dados será gerada automatica e disponibilizada nas variáve
 
 Acessar o diretório /infra-basica<br />
 _cd /app_
+
+comandos
+```hcl
+terraform init
+terraform fmt
+```
 
 Configurar com seu ambiente desejado, o que é global para todos os ambientes
 _terraform.tfvars_
@@ -200,8 +210,6 @@ module "env_prod" {
 #comandos
 
 ```hcl
-terraform init
-terraform fmt
 terraform plan
 terraform apply
 ```
