@@ -20,7 +20,7 @@ terraform apply
 
 | Variable | Value
 |------|--------|---------|
-| application_name | "vpc-id"
+| application_name | "vpc-id"|
 | db_name_basic | nome basico |
 
 ```hcl
