@@ -8,6 +8,9 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 - Internet Gateway
 - Elastic IP
 
+Acessar o diretório /infra-basica
+cd /infra-basic
+
 _terraform.tfvars_
 ```hcl
 region            = "us-east-1"
@@ -29,6 +32,9 @@ terraform apply
 Esse módulo irá criar uma estrutura de dev/hml e prod no beanstalk, utilizando vpc, subnete privada e pública, com https e security group.
 Também será criado duas bases de dados de dev/html e prod no rds aurora modo cluster.
 A senha do banco de dados será gerada automatica e disponibilizada nas variáveis de ambiente do beanstalk.
+
+Acessar o diretório /infra-basica
+cd /app
 
 _terraform.tfvars_
 ```hcl
