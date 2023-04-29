@@ -6,7 +6,7 @@ Caso não possua uma VPC criada de forma adequada seguindo boas práticas, você
 - NAT Gateway
 - Tabela de roteamento pública e privada
 - Internet Gateway
-- Ilastic IP
+- Elastic IP
 
 _terraform.tfvars_
 ```hcl
@@ -27,6 +27,8 @@ terraform apply
 ```
 ## app
 Esse módulo irá criar uma estrutura de dev/hml e prod no beanstalk, utilizando vpc, subnete privada e pública, com https e security group.
+Também será criado duas bases de dados de dev/html e prod no rds aurora modo cluster.
+A senha do banco de dados será gerada automatica e disponibilizada nas variáveis de ambiente do beanstalk.
 
 _terraform.tfvars_
 ```hcl
