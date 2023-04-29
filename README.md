@@ -25,7 +25,7 @@ terraform apply
 
 comandos
 
-##### terraform.tfvars
+_terraform.tfvars_
 
 ```hcl
 
