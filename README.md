@@ -28,11 +28,6 @@ terraform apply
 ## app
 Esse módulo irá criar uma estrutura de dev/hml e prod no beanstalk, utilizando vpc, subnete privada e pública, com https e security group.
 
-| Variable | Value |
-|------|--------|
-| xxx | v1.0.0 |
-| xxx | v1.0.0 |
-
 _terraform.tfvars_
 ```hcl
 #beanstalk-app
