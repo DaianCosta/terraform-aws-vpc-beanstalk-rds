@@ -244,6 +244,23 @@ resource "aws_elastic_beanstalk_environment" "env" {
     value     = var.nonce_salt
   }
 
+  # EFS
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "EFS_ID"
+    value     = "${aws_efs_file_system.file_storage.id}"
+  }
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "EFS_MOUNT_DIRECTORY"
+    value     = "${var.efs_mount_directory}"
+  }
+  setting {
+    namespace = "aws:elasticbeanstalk:application:environment"
+    name      = "AWS_REGION"
+    value     = "${var.region}"
+  }
+
 }
 
 data "aws_lb_listener" "http_listener" {

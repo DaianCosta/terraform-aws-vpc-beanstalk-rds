@@ -42,4 +42,7 @@ module "env_prod" {
 
   loadbalancer_certificate_arn = var.loadbalancer_certificate_arn
   loadbalancer_ssl_policy      = var.loadbalancer_ssl_policy
+
+  region = var.region
+  efs_mount_directory = "/var/app/efs"
 }

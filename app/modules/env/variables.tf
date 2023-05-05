@@ -1,3 +1,7 @@
+variable "region" {
+  type        = string
+  description = ""
+}
 #beanstalk-app
 variable "application_name" {
   type = string
@@ -169,4 +173,11 @@ variable "ipv6_cidr_blocks_public_ec2" {
 
 variable "role_beanstalk" {
   type = string
+}
+
+# Elastic File Storage (Environment variables)
+
+variable "efs_mount_directory" {
+  type    = string
+  default = ""
 }

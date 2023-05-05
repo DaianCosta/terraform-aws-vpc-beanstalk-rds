@@ -1,12 +1,14 @@
 #beanstalk-app
-application_name = "e-myproject-daian-teste"
-db_name_basic    = "myproject"
+application_name = "e-farmacias-daian-teste"
+
+db_name_basic    = "efarmaciasdaian"
+
 #beanstalk-environment
-vpc_id                       = "vpc-id"
-private_subnets              = ["subnet-id-a-1", "subnet-id-b-1"]
-public_subnets               = ["subnet-id-a-2", "subnet-id-b-2"]
+vpc_id                       = "vpc-02ec7796534d195a6"
+private_subnets              = ["subnet-00cb8dc524a869403", "subnet-0c01f3e920f201bd0"]
+public_subnets               = ["subnet-0e1b95e5cd043c7e4", "subnet-0ac707eb6b0304edd"]
 region                       = "us-east-1"
-loadbalancer_certificate_arn = "your arn from certificate"
-loadbalancer_ssl_policy      = "yout police ssl" #example ELBSecurityPolicy-FS-2018-06
+loadbalancer_certificate_arn = "arn:aws:acm:us-east-1:430080514437:certificate/faab7e59-598f-4936-bfba-45b14ba0f516"
+loadbalancer_ssl_policy      = "ELBSecurityPolicy-FS-2018-06"
 ipv6_cidr_blocks_public_ec2  = "false"
-role_beanstalk               = "yout role from ec2" #aws-elasticbeanstalk-ec2-role
+role_beanstalk               = "aws-elasticbeanstalk-ec2-role"
