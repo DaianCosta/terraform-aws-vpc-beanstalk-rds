@@ -1,0 +1,7 @@
+ami           = "ami-0889a44b331db0194"
+instance_type = "t2.micro"
+subnet_id     = "subnet-03d0c9e81d12d8c32"
+key_par       = "bastion-host-key-par"
+name_instance = "bastion-host"
+vpc_id        = "	vpc-029e5188aed8d38fa"
+region        = "us-east-1"
