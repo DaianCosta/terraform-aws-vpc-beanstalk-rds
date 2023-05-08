@@ -147,6 +147,14 @@ resource "aws_elastic_beanstalk_environment" "env" {
     value     = var.phpini_memory_limit
   }
 
+  setting {
+    namespace = "aws:autoscaling:launchconfiguration"
+    name      = "EC2KeyName"
+    value     = var.key_par
+    resource  = ""
+  }
+  
+
   # Envs
   setting {
     name      = "WP_DEBUG_DISPLAY"

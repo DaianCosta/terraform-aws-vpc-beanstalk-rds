@@ -35,4 +35,4 @@ terraform.rc
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Terraform
 
-bastion-host-key-par.pem
+*.pem

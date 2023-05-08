@@ -181,3 +181,8 @@ variable "efs_mount_directory" {
   type    = string
   default = ""
 }
+
+variable "key_par" {
+  type = string
+  default = ""
+}

@@ -44,5 +44,6 @@ module "env_prod" {
   loadbalancer_ssl_policy      = var.loadbalancer_ssl_policy
 
   region = var.region
-  efs_mount_directory = "/var/app/efs"
+  efs_mount_directory = "/wpfiles"
+  key_par = var.key_par
 }

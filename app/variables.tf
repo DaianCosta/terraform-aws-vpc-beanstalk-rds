@@ -42,3 +42,7 @@ variable "role_beanstalk" {
 variable "db_name_basic" {
   type = string
 }
+
+variable "key_par" {
+  type = string
+}
