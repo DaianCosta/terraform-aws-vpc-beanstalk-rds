@@ -66,9 +66,39 @@ resource "aws_elastic_beanstalk_environment" "env" {
   }
 
   setting {
-    name      = "HealthCheckPath"
     namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "HealthCheckInterval"
+    value     = var.healthcheck_interval
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "HealthyThresholdCount"
+    value     = var.healthcheck_healthy_threshold_count
+  }
+
+  setting{
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "UnhealthyThresholdCount"
+    value     = var.healthcheck_unhealthy_threshold_count
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "HealthCheckPath"
     value     = var.healthcheck_url
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "MatcherHTTPCode"
+    value     = join(",", sort(var.healthcheck_httpcodes_to_match))
+  }
+
+  setting {
+    namespace = "aws:elasticbeanstalk:environment:process:default"
+    name      = "HealthCheckTimeout"
+    value     = var.healthcheck_timeout
   }
 
   setting {
@@ -108,11 +138,6 @@ resource "aws_elastic_beanstalk_environment" "env" {
   }
 
   setting {
-    namespace = "aws:elasticbeanstalk:environment:process:default"
-    name      = "MatcherHTTPCode"
-    value     = "200"
-  }
-  setting {
     namespace = "aws:elasticbeanstalk:environment"
     name      = "LoadBalancerType"
     value     = "application"
@@ -135,10 +160,55 @@ resource "aws_elastic_beanstalk_environment" "env" {
     value     = var.max_instances
   }
 
+  ##===Autoscale trigger === ###
+
   setting {
-    name      = "HealthCheckPath"
-    namespace = "aws:elasticbeanstalk:environment:process:default"
-    value     = var.healthcheck_url
+    namespace = "aws:autoscaling:trigger"
+    name      = "MeasureName"
+    value     = var.autoscale_measure_name
+    resource  = ""
+  }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name      = "Statistic"
+    value     = var.autoscale_statistic
+    resource  = ""
+  }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name      = "Unit"
+    value     = var.autoscale_unit
+    resource  = ""
+  }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name      = "LowerThreshold"
+    value     = var.autoscale_lower_bound
+    resource  = ""
+  }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name      = "LowerBreachScaleIncrement"
+    value     = var.autoscale_lower_increment
+    resource  = ""
+  }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name      = "UpperThreshold"
+    value     = var.autoscale_upper_bound
+    resource  = ""
+  }
+
+  setting {
+    namespace = "aws:autoscaling:trigger"
+    name      = "UpperBreachScaleIncrement"
+    value     = var.autoscale_upper_increment
+    resource  = ""
   }
 
   setting {
@@ -153,7 +223,6 @@ resource "aws_elastic_beanstalk_environment" "env" {
     value     = var.key_par
     resource  = ""
   }
-  
 
   # Envs
   setting {

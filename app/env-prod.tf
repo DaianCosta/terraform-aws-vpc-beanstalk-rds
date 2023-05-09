@@ -30,7 +30,7 @@ module "env_prod" {
 
   #wp
   debug_display    = 0
-  url              = format("http://%s-%s.%s.elasticbeanstalk.com", lower(local.env_name_prod), lower(var.application_name), var.region)
+  url              = format("https://%s-%s.%s.elasticbeanstalk.com", lower(local.env_name_prod), lower(var.application_name), var.region)
   auth_key         = "{vZ9^>U~d6*hmR|W#$a&-0`eqFp} %?9>w$hoJC|iK6$kDX(p|P6(89TeAm`Z5gj"
   auth_salt        = "a=sQmzl0m_DUJxlP-m~{5lnk;9nwccVS:#q@+/TB$d,2yjmVaM7>L|MyQ:[E/cF~"
   logged_in_key    = "{l56 ohIi#Ex^Fp;!1m.4n|{iWwz(~m|?=h| 2U~9:,+dnazTP`S^VZ~GWXBp+|m"

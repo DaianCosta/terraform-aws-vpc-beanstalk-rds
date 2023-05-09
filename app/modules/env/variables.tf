@@ -111,6 +111,36 @@ variable "healthcheck_url" {
   default = "/"
 }
 
+variable "healthcheck_interval" {
+  type        = number
+  default     = 10
+  description = "The interval of time, in seconds, that Elastic Load Balancing checks the health of the Amazon EC2 instances of your application"
+}
+
+variable "healthcheck_timeout" {
+  type        = number
+  default     = 5
+  description = "The amount of time, in seconds, to wait for a response during a health check. Note that this option is only applicable to environments with an application load balancer"
+}
+
+variable "healthcheck_healthy_threshold_count" {
+  type        = number
+  default     = 3
+  description = "The number of consecutive successful requests before Elastic Load Balancing changes the instance health status"
+}
+
+variable "healthcheck_unhealthy_threshold_count" {
+  type        = number
+  default     = 3
+  description = "The number of consecutive unsuccessful requests before Elastic Load Balancing changes the instance health status"
+}
+
+variable "healthcheck_httpcodes_to_match" {
+  type        = list(string)
+  default     = ["200"]
+  description = "List of HTTP codes that indicate that an instance is healthy. Note that this option is only applicable to environments with a network or application load balancer"
+}
+
 #https
 variable "loadbalancer_certificate_arn" {
   type = string
@@ -185,4 +215,46 @@ variable "efs_mount_directory" {
 variable "key_par" {
   type = string
   default = ""
+}
+
+variable "autoscale_measure_name" {
+  type        = string
+  default     = "CPUUtilization"
+  description = "Metric used for your Auto Scaling trigger"
+}
+
+variable "autoscale_statistic" {
+  type        = string
+  default     = "Average"
+  description = "Statistic the trigger should use, such as Average"
+}
+
+variable "autoscale_unit" {
+  type        = string
+  default     = "Percent"
+  description = "Unit for the trigger measurement, such as Bytes"
+}
+
+variable "autoscale_lower_bound" {
+  type        = number
+  default     = 20
+  description = "Minimum level of autoscale metric to remove an instance"
+}
+
+variable "autoscale_lower_increment" {
+  type        = number
+  default     = -1
+  description = "How many Amazon EC2 instances to remove when performing a scaling activity."
+}
+
+variable "autoscale_upper_bound" {
+  type        = number
+  default     = 80
+  description = "Maximum level of autoscale metric to add an instance"
+}
+
+variable "autoscale_upper_increment" {
+  type        = number
+  default     = 1
+  description = "How many Amazon EC2 instances to add when performing a scaling activity"
 }
